@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <style>
+        .zebra{
+            background-color: skyblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">AJAX - Gallery: Load image file names</h1>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <button id="load-content">Load Content</button>
+
+        <!-- Add content here -->
+
+        <div id="gallery">
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script>
+        //split the image file name from getImage.txt file
+        $.get("getImages.html", function(data, status){
+            //alert("Data: " + data + "\nStatus: " + status);
+            //split the data using |
+            var images = data.split('|');
+            //alert(images);
+            $.each(images, function(index) {
+                console.log(index +" "+ this);
+            });
+        });
+
+        //Click the button to load the image
+        $('#load-content').on('click', function(){
+
+            $('<img></img>')
+                .attr('src', 'responsive.png')
+                .appendTo('#content');
+        });
+
+        var GALLERY = {
+            container: "#gallery",
+            url: "getImages.html",
+            delay: 5000,
+            load: function() {
+                // Load our data
+                var _gallery = this;
+                $.ajax({
+                    type: "get",
+                    url: this.url,
+                    beforeSend: function() {
+                        $(_gallery.container)
+                            .find('img')
+                            .fadeOut('slow', function() {
+                                $(this).remove();
+                            });
+                    },
+                    success: function(data) {
+                        var images = data.split('|');
+                        $.each(images, function() {
+                            _gallery.display(this);
+                        });
+                    },
+                    complete: function() {
+                        setTimeout(function() {
+                            _gallery.load();
+                        }, _gallery.delay);
+                    }
+                });
+            },
+            display: function(image_url) {
+                // Process the data
+                $('<img></img>')
+                    .attr('src', image_url)
+                    .hide()
+                    .load(function() {
+                        $(this).fadeIn();
+                    })
+                    .appendTo(this.container);
+            }
+        };
+
+        GALLERY.load();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+.zebra {
+    background-color: darkseagreen;
+}
+
+.mario {
+    position: relative;
+    top: -130px;
+    height: 80px;
+}
+.mario-l {
+    position: relative;
+    top: -130px;
+    height: 80px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+.mushroom {
+    position: relative;
+    top: -320px;
+    height: 50px;
+    left: 710px;
+}
+h1 {
+    position: relative;
+    font-size: 150px;
+    text-align: center;
+    
+}
+.move-left{
+    padding-left: 10px;
+}
+.bg {
+    width: 100%;
+    height: 600px;
+    background-image: url('http://patsobo.com/content/images/2015/05/figure_3.jpg');
+    position: relative;
+}
+.responsive-bg {
+    width: 100%;
+    height: 500px;
+}

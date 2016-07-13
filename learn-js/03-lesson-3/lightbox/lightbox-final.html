@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <style>
+    /* Product */
+
+    .product{
+      width: 32%;
+      float: left;
+      overflow: auto;
+      padding: 10px;
+      border: 1px dashed silver;
+      text-align: center;
+    }
+
+    .product a img{
+      height: 150px;
+      border:2px solid white;
+    }
+    .product a img:hover{
+      border:2px dashed red;
+    }
+
+    /* Overlay */
+
+    #overlay{
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    #overlay--container{
+      display: table;
+      position: relative;
+      height: 100%;
+      margin: 0 auto;
+    }
+    #lightbox{
+      display: table-cell;
+      vertical-align: middle;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .lightbox--contents{
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    .hide{
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Starwars Lego Shop</h1>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div class="product">
+    <h2>X-Wing</h2>
+    <a href="images/x-wing.png" target="_blank" > <img src="images/x-wing.png"> </a>
+    <p><strong>Name:</strong> X-wing</p>
+    <p><strong>Price:</strong> £100</p>
+    <button>Buy Now!</button>
+  </div>
+
+  <div class="product">
+    <h2>Attack Cruiser</h2>
+    <a href="images/Attack-Cruiser.jpg" target="_blank" > <img src="images/Attack-Cruiser.jpg"> </a>
+    <p><strong>Name:</strong> Attack Cruiser</p>
+    <p><strong>Price:</strong> £200</p>
+    <button>Buy Now!</button>
+  </div>
+
+  <div class="product">
+    <h2>Millennium Falcon</h2>
+    <a href="images/Millennium-Falcon.jpg" target="_blank" > <img src="images/Millennium-Falcon.jpg"> </a>
+    <p><strong>Name:</strong> Millennium Falcon</p>
+    <p><strong>Price:</strong> £100</p>
+    <button>Buy Now!</button>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+
+    //~~~~~~~~~~~~~~~~~~ LIGHTBOX ~~~~~~~~~~~~~~~~
+
+    //Click on image
+    $('.product a').on('click', function(e){
+      // Prevent the default action
+      e.preventDefault();
+      //Add an overlay
+      //Fade in slow
+      $('<div id="overlay"></div>').fadeIn('slow').appendTo('body').on('click', function(e){
+        //when we click the overlay we want to fadeout
+        $(this).fadeOut('slow');
+        //remove the overlay
+        setTimeout(removeOverlay, 1000);
+      });
+      //Add the overlay--container, lightbox and lightbox--contents
+      //The reason for this nested structure is to vertically align the image using display:table
+      $('<div id="overlay--container"></div>').appendTo('#overlay');
+      $('<div id="lightbox"></div>').appendTo('#overlay--container');
+      $('<div class="lightbox--contents">').appendTo('#lightbox');
+      //Add image to the overlay--content
+      $('<img>', {
+          src: $(this).attr('href')
+      }).appendTo('.lightbox--contents');
+    });
+
+  });
+
+  function removeOverlay(){
+    //Remove overlay
+    $('#overlay').remove();
+  }
+
+</script>
+</body>
+
+</html>

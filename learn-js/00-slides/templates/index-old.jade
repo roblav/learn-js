@@ -1,0 +1,120 @@
+//- Use the presentation layout so we can keep this clean
+extends layouts/presentation
+
+//- Customize the title, meta description, and author using this block.
+block title
+  title reveal.js + Jade - The HTML Presentation Framework
+  meta(
+    name="description"
+    content="A framework for easily creating beautiful presentations using HTML by @hakimel. Ported to Jade by @jlengstorf."
+  )
+  meta(name="author" content="Hakim El Hattab")
+
+
+//- Add your slides here. See templates/includes/_mixins.jade for information 
+//- on how `+slide` works.
+block slides
+
+  include ./slides/01-intro.jade
+
+  +slide
+    h2 Learning Curve
+    img(width="850" height="500" data-src="lib/images/Learning-Curve-Reality1.jpeg" alt="Learning Curve Reality")
+
+  +slide
+    h2 What is your WHY?
+    br
+    h3 ‘He who has a why can endure any how.’
+    p - Frederick Nietzsche, German philosopher
+    br
+    h4 Why do you want to learn JavaScript?
+
+    aside.notes
+      p MY WHY - I have taken the journey and I want to pass my knowledge on to others.
+      p I do my best learning when I'm challenged to teach
+
+  +slide
+    h2 Web Development
+    ul
+      li Development Environment
+      ul
+        li Chrome Web Browser & Developer Tools
+        li Brackets IDE (Integrated Development Environment)
+      li JavaScript
+      li JQuery
+      li Bootstrap
+      li JS Bin
+
+  +slide
+    h2 Jquery Examples
+    ul
+      li Equal Heights
+      li FAQs - Hide/Show
+      li Image Slider
+
+    //  - Use the `slide` mixin for quick slide creation
+    //  +slide(data-markdown=true, data-background="#EEEEEE")
+    //    h2 Slide Title
+    //      p Slide text goes here.
+    //      aside.notes
+    //    p Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+
+  include ./slides/02-variables.jade
+  include ./slides/03-comments.jade
+  include ./slides/04-data-types.jade
+
+  +slide
+    h2 Variables
+    img(data-src="lib/images/variables.png" alt="Variables")
+
+  +slide
+    h2 Memory Allocation
+    img(data-src="lib/images/memory-allocation.png" alt="Memory Allocation")
+
+  +slide
+    h2 JavaScript Variable Scope
+    p The scope of a variable is the region of your program in which it is defined. JavaScript variables have only two scopes.
+    p Global Variables − A global variable has global scope which means it can be defined anywhere in your JavaScript code.
+    p Local Variables − A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.
+
+  +slide
+    h2 Basic maths: Arithmetic Operators
+    pre
+      code.
+        ()  control order of operations
+        *   multiplication
+        /   division
+        -   subtraction
+        +   addition
+        %   Math and the modulo
+        ++  Increment
+        --  Decrement
+
+  +slide
+    +slide
+      h2 Web Development
+      ul
+        li Development Environment
+        ul
+          li Chrome Web Browser & Developer Tools
+          li Brackets IDE (Integrated Development Environment)
+        li JavaScript
+        li JQuery
+        li Bootstrap
+        li JS Bin
+      br
+      a.navigate-down(href="#")
+        img(width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow")
+
+    +slide
+      h2 Basement Level 1
+      p.
+        Nested slides are useful for adding additional detail underneath a high level horizontal slide.
+
+    +slide
+      h2 Basement Level 2
+      p That's it, time to go back up.
+      br
+      a(href="#/2")
+        img(width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg)")
+

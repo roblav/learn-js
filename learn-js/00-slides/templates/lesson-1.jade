@@ -1,0 +1,26 @@
+//- Use the presentation layout so we can keep this clean
+extends layouts/presentation
+
+//- Customize the title, meta description, and author using this block.
+block title
+  title Intro to JS - Lesson 1
+  meta(
+    name="description"
+    content="Learning the basics of JavaScript"
+  )
+  meta(name="author" content="Rob Lavender")
+
+//- Add your slides here. See templates/includes/_mixins.jade for information 
+//- on how `+slide` works.
+block slides
+  include lesson1/01-intro.jade
+  include lesson1/02-learning-curve.jade
+  include lesson1/03-why.jade
+  include lesson1/04-course-objectives.jade
+  include lesson1/05-dev-environment.jade
+  include lesson1/06-history-js.jade
+  include lesson1/07-js-vs-jquery.jade
+  include lesson1/08-jquery.jade
+  include lesson1/10-jquery-examples.jade
+  include lesson1/11-resources.jade
+  include lesson1/12-homework.jade

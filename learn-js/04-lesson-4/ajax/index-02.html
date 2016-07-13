@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">AJAX Example - Picking HTML with Selectors</h1>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <button id="load-content">Load Content</button>
+
+        <!-- Add content here -->
+
+        <div id="content">
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script>
+            $('#load-content').on('click', function(){
+                $('#content').load('table.html .table1');
+            });
+    </script>
+</body>
+
+</html>

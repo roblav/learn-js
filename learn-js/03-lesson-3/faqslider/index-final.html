@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FAQ Slider</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<h1>jQuery FAQ Slider</h1>
+			<div class="title"><h3>FAQ Slider Using jQuery</h3></div>
+			<ul id="faq">
+				<li class="q"><img src="img/arrow.png"> Lorem ipsum dolor sit amet, consectetur adipiscing elit?</li>
+				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit. Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+				
+				<li class="q"><img src="img/arrow.png"> Lorem ipsum dolor sit amet, consectetur adipiscing elit?</li>
+				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit. Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+				
+				<li class="q"><img src="img/arrow.png"> Lorem ipsum dolor sit amet, consectetur adipiscing elit?</li>
+				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+				
+				<li class="q"><img src="img/arrow.png"> Lorem ipsum dolor sit amet, consectetur adipiscing elit?</li>
+				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+				
+				<li class="q"><img src="img/arrow.png"> Lorem ipsum dolor sit amet, consectetur adipiscing elit?</li>
+				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+				
+				<li class="q"><img src="img/arrow.png"> Lorem ipsum dolor sit amet, consectetur adipiscing elit?</li>
+				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+			</ul>
+		</div>
+		<!--<script src="js/script.js" type="text/javascript"></script>-->
+		<script>
+			$(document).ready(function() {
+
+				//Hide the answers
+				$('#faq li.a').hide();
+
+				//make the questions clickable; change the cursor:pointer
+				$('#faq li.q').css({'cursor':'pointer'});
+
+				//attach a click handler to the question
+				$('#faq li.q').on('click', function(){
+					//Hide all answers
+					$('#faq li.a').slideUp();
+					//show the answer for the answer that was clicked
+					$(this).next('li').slideDown();
+				});
+
+			});
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JS test Quiz</title>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>JS test Quiz</h1>
+    <p>Test your JS knowledge</p>
+</header>
+<div id="result"></div>
+<form id="formQuiz" onsubmit="return checkAnswers();" >
+
+    <div class="question">
+        <p>What tag do you use to add a javascript file to a page?</p>
+        <input id="q1a" name="q1" value="a" type="radio"><label for="q1a">&lt; script &gt; </label><br />
+        <input id="q1b" name="q1" value="b" type="radio"><label for="q1b">&lt; body &gt; </label><br />
+        <input id="q1c" name="q1" value="c" type="radio"><label for="q1c">&lt; javascript &gt; </label>
+    </div>
+
+    <div class="question">
+        <p>What syntax to denote the start and end of a code block?</p>
+        <input id="q2a" name="q2" value="a" type="radio"><label for="q2a">( )</label><br />
+        <input id="q2b" name="q2" value="b" type="radio"><label for="q2b">{ }</label><br />
+        <input id="q2c" name="q2" value="c" type="radio"><label for="q2c">[ ]</label>
+    </div>
+
+    <br><br>
+    <input type="submit" value="Submit Answers" >
+
+</form>
+<script>
+    // self executing function here
+    //(function() {
+    //    // your page initialization code here
+    //    // the DOM will be available here
+    //    //alert('Bob');
+    //})();
+</script>
+</body>
+</html>

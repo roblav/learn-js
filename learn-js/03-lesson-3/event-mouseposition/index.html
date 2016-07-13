@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">Mouse Over Event</h1>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <table class="table table1">
+            <thead>
+                <tr>
+                    <th>[Title]</th>
+                    <th>[Title]</th>
+                    <th>[Title]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                </tr>
+                <tr>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                </tr>
+                <tr>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                </tr>
+                <tr>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                </tr>
+                <tr>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                </tr>
+                <tr>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                </tr>
+                <tr>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                    <td>[data]</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            //$('.table1 tr').mouseenter( function(){$(this).addClass('zebra');}).mouseleave(function(){$(this).removeClass('zebra');});
+
+            $('.table1 tr').hover(function(){
+                $(this).addClass('zebra');
+            }, function(){
+                $(this).removeClass('zebra');
+            });
+            var finalcolor = "hsla(219, 100%, 57%, 1)";
+            $('.jumbotron').css({"background-color": finalcolor});
+
+
+        });
+
+        $(window).mousemove(function(e){
+            //console.log(e.pageX);
+            //how to get a value between 1 and 100
+            //percentage of window width
+            var winWidthPercent = (e.pageX / $(window).width()) * 100;
+            var winHeightPercent = (e.pageY / $(window).height()) * 360;
+
+            //console.log(parseInt(winHeightPercent));
+            var finalcolor = "hsla("+winHeightPercent+"," + winWidthPercent +"%, 50%, 1)";
+            $('.jumbotron').css({"background-color": finalcolor});
+        });
+
+    </script>
+</body>
+
+</html>

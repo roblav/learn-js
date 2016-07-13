@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn t work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <style>
+
+    .arrow-container {
+      position: fixed;
+      right: -36px;
+      top: 75%;
+      width: 36px;
+      height: 35px;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+
+    .arrow-container:hover {
+      background-color: silver;
+    }
+  </style>
+</head>
+
+<body>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Advanced Scroll Event</h1>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <h2 class="text-center">Heading 2</h2>
+  <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et elit vehicula, finibus nibh a, lacinia diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sit amet erat sem. Quisque imperdiet ex et erat luctus molestie. Cras a finibus nisi, scelerisque fringilla neque. Etiam id sollicitudin felis, sed posuere mauris. Donec luctus sollicitudin mauris pretium lobortis. Curabitur vel nibh odio. Pellentesque non commodo libero, et feugiat massa.</p>
+
+  <p>  Suspendisse vestibulum leo sit amet lacus molestie, ut suscipit dui varius. Pellentesque ut odio justo. Quisque eget blandit leo. Morbi tempus diam eget dictum consectetur. Pellentesque faucibus justo sit amet nibh fermentum, a accumsan augue faucibus. Proin ornare quis lacus non fermentum. Vivamus suscipit, nisi ac cursus vulputate, augue lectus tempus leo, ac convallis orci leo quis massa. Phasellus lectus ipsum, feugiat sed nisl in, pellentesque efficitur mauris. Cras hendrerit tempus ante. Sed at vestibulum elit, non pulvinar ipsum.</p>
+
+  <p>  Curabitur gravida lectus ut velit hendrerit sodales. Suspendisse vel ex velit. Sed ante felis, luctus ut orci mollis, fermentum condimentum est. Nulla facilisis lectus quis lacus efficitur dictum. Vivamus eleifend ultrices pulvinar. Fusce commodo mi sed turpis convallis, at tincidunt ipsum malesuada. Curabitur nunc quam, lobortis vel est eu, ultrices pretium dolor. Quisque et interdum tellus, nec facilisis diam. Nulla ut faucibus justo.</p>
+
+  <h2 class="text-center">Heading 2</h2>
+  <p>  Phasellus vulputate molestie leo eget sollicitudin. Nam pretium iaculis nunc vitae finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin fermentum mollis mauris a ultricies. Quisque ut ornare dui. Maecenas aliquam, arcu ut tristique vulputate, odio mi ullamcorper orci, sed eleifend quam nisl non leo. Phasellus non iaculis risus. Vivamus lobortis fermentum lacus. Aliquam dapibus rutrum ex, at pretium ipsum. Duis varius condimentum nisi finibus vestibulum. Mauris faucibus vestibulum turpis tempor posuere. Nulla vel metus dui.</p>
+
+  <p>  Nulla accumsan facilisis risus. In lorem ligula, lobortis sed diam et, laoreet volutpat leo. Mauris vitae lectus a
+    magna semper dignissim sed auctor lacus. Nulla facilisi. Fusce sit amet nisi vitae arcu consectetur fringilla. In
+    dapibus tempor leo, eu sodales odio cursus ac. Cras tincidunt neque dolor, id mattis neque ullamcorper in.</p>
+
+  <h2 class="text-center">Form Example</h2>
+  <form id="signup-form" onsubmit="return signupForm()" method="post">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name">
+
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Email">
+    </div>
+    <input type="submit" class="btn btn-default">
+
+  </form>
+  <h2 class="text-center">Heading 2</h2>
+  <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et elit vehicula, finibus nibh a, lacinia diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sit amet erat sem. Quisque imperdiet ex et erat luctus molestie. Cras a finibus nisi, scelerisque fringilla neque. Etiam id sollicitudin felis, sed posuere mauris. Donec luctus sollicitudin mauris pretium lobortis. Curabitur vel nibh odio. Pellentesque non commodo libero, et feugiat massa.</p>
+
+  <p>  Suspendisse vestibulum leo sit amet lacus molestie, ut suscipit dui varius. Pellentesque ut odio justo. Quisque eget blandit leo. Morbi tempus diam eget dictum consectetur. Pellentesque faucibus justo sit amet nibh fermentum, a accumsan augue faucibus. Proin ornare quis lacus non fermentum. Vivamus suscipit, nisi ac cursus vulputate, augue lectus tempus leo, ac convallis orci leo quis massa. Phasellus lectus ipsum, feugiat sed nisl in, pellentesque efficitur mauris. Cras hendrerit tempus ante. Sed at vestibulum elit, non pulvinar ipsum.</p>
+
+  <p>  Curabitur gravida lectus ut velit hendrerit sodales. Suspendisse vel ex velit. Sed ante felis, luctus ut orci mollis, fermentum condimentum est. Nulla facilisis lectus quis lacus efficitur dictum. Vivamus eleifend ultrices pulvinar. Fusce commodo mi sed turpis convallis, at tincidunt ipsum malesuada. Curabitur nunc quam, lobortis vel est eu, ultrices pretium dolor. Quisque et interdum tellus, nec facilisis diam. Nulla ut faucibus justo.</p>
+  <div class="arrow-container">
+    <!--[if gte IE 9]> <!---->
+    <svg version="1.1" id="Isolation_Mode" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35" enable-background="new 0 0 35 35" xml:space="preserve">
+        <path fill="#0B0A0B" d="M17.5,35C7.8,35,0,27.2,0,17.5C0,7.9,7.8,0,17.5,0C27.1,0,35,7.9,35,17.5C35,27.2,27.1,35,17.5,35z M17.5,2.2C9.1,2.2,2.2,9.1,2.2,17.5c0,8.4,6.9,15.3,15.3,15.3c8.4,0,15.3-6.9,15.3-15.3C32.8,9.1,25.9,2.2,17.5,2.2z"></path>
+        <polygon fill="#0B0A0B" points="15.8,14.5 10.7,19.9 10.7,15.5 17.5,8.3 24.3,15.5 24.3,19.9 19.2,14.5 19.2,26.7 15.8,26.7"></polygon>
+      </svg>
+    <!--<![endif]-->
+  </div>
+  <h2 class="text-center">Heading 2</h2>
+  <p>  Phasellus vulputate molestie leo eget sollicitudin. Nam pretium iaculis nunc vitae finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin fermentum mollis mauris a ultricies. Quisque ut ornare dui. Maecenas aliquam, arcu ut tristique vulputate, odio mi ullamcorper orci, sed eleifend quam nisl non leo. Phasellus non iaculis risus. Vivamus lobortis fermentum lacus. Aliquam dapibus rutrum ex, at pretium ipsum. Duis varius condimentum nisi finibus vestibulum. Mauris faucibus vestibulum turpis tempor posuere. Nulla vel metus dui.</p>
+
+  <p>  Nulla accumsan facilisis risus. In lorem ligula, lobortis sed diam et, laoreet volutpat leo. Mauris vitae lectus a
+    magna semper dignissim sed auctor lacus. Nulla facilisi. Fusce sit amet nisi vitae arcu consectetur fringilla. In
+    dapibus tempor leo, eu sodales odio cursus ac. Cras tincidunt neque dolor, id mattis neque ullamcorper in.</p>
+
+</div>
+
+<div class="overlay hide">
+  <div class="overlay--container">
+    <div class="overlay--content">
+      <h3> Your Details </h3>
+      <p class="name">Name: </p>
+      <p class="email">Email: </p>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<!--<script src="js/script.js" type="text/javascript"></script>-->
+<script>
+  $(document).ready(function(){
+
+    //Click event to scroll to top
+    $('.arrow-container').click(function(){
+      $('html, body').animate({scrollTop : 0},800);
+      return false;
+    });
+
+    //is the user scrolling
+    $( window ).scroll(function() {
+
+      clearTimeout($.data(this, 'scrollTimer'));
+      $.data(this, 'scrollTimer', setTimeout(function() {
+        // do something
+        if($( this ).scrollTop() > 300){
+          //console.log($('body').scrollTop());
+          //Animate the .arrow-container
+          animateArrow('.arrow-container', '0')
+
+        }else if($('.arrow-container.docked') && ($( window ).scrollTop() <= 300)){
+
+          animateArrow('.arrow-container', '-36px')
+        }
+      }, 250));
+
+
+    });
+
+  });
+
+  function animateArrow(element, pos){
+    //Animate the .arrow-container
+    $(element).animate({right : pos},800);
+    $(element).toggleClass('docked');
+  }
+
+</script>
+</body>
+
+</html>
